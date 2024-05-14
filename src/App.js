@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import DaySelector from './Days';
+import TodoForm from './Form';
+import TodoList from './TodoList';
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [selectedDay, setSelectedDay] = useState('Tuesday'); // Corregido
+
+  const addItem = (text, day) => {
+    const newItem = { id: Date.now(), text, day, completed: false };
+    setItems([...items, newItem]);
+  };
+
+  const toggleComplete = (id) => {
+    setItems(
+      items.map(item =>
+        item.id === id ? { ...item, completed: !item.completed } : item
+      )
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Mike workout!</h1>
+      <DaySelector selectedDay={selectedDay} setSelectedDay={setSelectedDay} />
+      <TodoForm addItem={addItem} />
+      <TodoList items={items.filter(item => item.day === selectedDay)} toggleComplete={toggleComplete} />
     </div>
   );
 }
