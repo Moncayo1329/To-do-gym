@@ -84,8 +84,10 @@ function TodoForm({ addItem }) {
         {/* Mostrar los ejercicios filtrados */}
         <ul>
           {filteredExercises.map((exercise, index) => (
-            <li key={index} onClick={() => handleAddItemClick(exercise)}>
-              {exercise.name}
+            <li key={index}  onClick={() => handleAddItemClick(exercise)}>
+             <h3>{exercise.name}</h3> 
+             <p>{exercise.description}</p> 
+             <img src={exercise.img} alt={exercise.name} width="100" />
             </li>
           ))}
         </ul>

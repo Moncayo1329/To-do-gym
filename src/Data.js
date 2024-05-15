@@ -3,17 +3,17 @@ export const exercises = {
         {
             name: "Dominadas",
             description: "4 series de 6 repeticiones",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvWr7RLWvmwL83KMSzRwhrMEzbITbhrV0Kmg&s"
+            img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/330px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg"
         },
         {
             name: "Remo con barra",
             description: "3 series de 10 repeticiones",
-            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqNcBeQevGWsqJ3WbAJYLS_CaHnCvtRAnRNg&s"
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqNcBeQevGWsqJ3WbAJYLS_CaHnCvtRAnRNg&s"
         },
         {
             name: "Curl de bíceps con mancuernas",
             description: "3 series de 12 repeticiones",
-            image: "url_de_la_imagen_de_curl_de_biceps.jpg"
+            img: "url_de_la_imagen_de_curl_de_biceps.jpg"
         }
     ],
     miercoles: [
