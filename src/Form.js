@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { exercises } from './Data'; // Asumiendo que tienes los datos de ejercicios en un archivo data.js
 
-function TodoForm({ addItem , exercise}) {
+function TodoForm({ addItem }) {
   const [text, setText] = useState('');
   const [filteredExercises, setFilteredExercises] = useState([]);
+  const [message, setMessage] = useState('');
 
   const handleInputChange = (e) => {
     const value = e.target.value.toLowerCase();
     setText(value);
 
     // Filtrar los ejercicios basados en el valor del input
-    if (value.includes('martes') || value.includes('miercoles') || value.includes('jueves') || value.includes('viernes') ) {
+    if (value.includes('martes') || value.includes('miercoles') || value.includes('jueves') || value.includes('viernes')) {
       let filtered = [];
       if (value.includes('martes')) {
         filtered = [...filtered, ...exercises['martes']];
@@ -20,7 +21,7 @@ function TodoForm({ addItem , exercise}) {
       }
       if (value.includes('jueves')) {
         filtered = [...filtered, ...exercises['jueves']];
-      } 
+      }
       if (value.includes('viernes')) {
         filtered = [...filtered, ...exercises['viernes']];
       }
@@ -58,26 +59,42 @@ function TodoForm({ addItem , exercise}) {
     setText(''); // Limpiar el campo de texto después de agregar la tarea
   };
 
+  const handleCompleteDay = () => {
+    // Mostrar mensaje de felicitación
+    setMessage('¡Bien hecho por hoy chaval! 🎉 🎉');
+
+    // Limpiar tareas del día
+    setFilteredExercises([]);
+
+    setTimeout(() => {
+      setMessage('');
+    }, 3000);
+  };
+  
 
   return (
-    <form onSubmit={handleSubmit} className="todo-form">
-      <input
-        type="text"
-        value={text}
-        onChange={handleInputChange}
-        placeholder="What day huh?"
-      />
-      {/* Mostrar los ejercicios filtrados */}
-      <ul>
-        {filteredExercises.map((exercise, index) => (
-          <li key={index} onClick={() => handleAddItemClick(exercise)}>
-            {exercise.name}
-          </li>
-        ))}
-      </ul>
-    <button type="submit">Done</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit} className="todo-form">
+        <input
+          type="text"
+          value={text}
+          onChange={handleInputChange}
+          placeholder="What day huh?"
+        />
+        {/* Mostrar los ejercicios filtrados */}
+        <ul>
+          {filteredExercises.map((exercise, index) => (
+            <li key={index} onClick={() => handleAddItemClick(exercise)}>
+              {exercise.name}
+            </li>
+          ))}
+        </ul>
+      </form>
+      {message && <p>{message}</p>}
+      <button onClick={handleCompleteDay}>Done</button>
+    </div>
   );
 }
 
 export default TodoForm;
+
