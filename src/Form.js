@@ -61,7 +61,7 @@ function TodoForm({ addItem }) {
 
   const handleCompleteDay = () => {
     // Mostrar mensaje de felicitación
-    setMessage('¡Bien hecho por hoy chaval! 🎉 🎉');
+    setMessage('¡Bien hecho por hoy chaval! keep working bitch! 🎉 🎉');
 
     // Limpiar tareas del día
     setFilteredExercises([]);
@@ -84,11 +84,11 @@ function TodoForm({ addItem }) {
         {/* Mostrar los ejercicios filtrados */}
         <ul>
           {filteredExercises.map((exercise, index) => (
-            <li key={index}  onClick={() => handleAddItemClick(exercise)}>
+            <div className='fixing 'key={index}>
              <h3>{exercise.name}</h3> 
              <p>{exercise.description}</p> 
              <img src={exercise.img} alt={exercise.name} width="100" />
-            </li>
+            </div>
           ))}
         </ul>
       </form>
