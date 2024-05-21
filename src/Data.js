@@ -1,7 +1,7 @@
 export const exercises = {
     martes: [
         {
-            name: "Dominadas",
+            name: "Pecho plano",
             description: "4 series de 10 repeticiones",
             img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRL2jBAN7aAgij1Gz2jIvF9wJ-MRvq9Xauw&s"
         },
@@ -11,9 +11,9 @@ export const exercises = {
             img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqNcBeQevGWsqJ3WbAJYLS_CaHnCvtRAnRNg&s"
         },
         {
-            name: "Curl de bíceps con mancuernas",
-            description: "3 series de 12 repeticiones",
-            img: "url_de_la_imagen_de_curl_de_biceps.jpg"
+            name: "Pecho inclinado",
+            description: "4 series de 10 repeticiones",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3h18MmE7-JZN4JjsJDbYhc1bm7I9VVQ6yUw&s"
         }
     ],
     miercoles: [

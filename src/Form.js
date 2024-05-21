@@ -5,6 +5,7 @@ function TodoForm({ addItem }) {
   const [text, setText] = useState('');
   const [filteredExercises, setFilteredExercises] = useState([]);
   const [message, setMessage] = useState('');
+  const [checkedItems, setCheckedItems] = useState({});
 
   const handleInputChange = (e) => {
     const value = e.target.value.toLowerCase();
@@ -70,13 +71,19 @@ function TodoForm({ addItem }) {
       setMessage('');
     }, 3000);
   };
+    const handleCheckboxChange = (index) => {
+      setCheckedItems((prevState) => ({
+        ...prevState,
+        [index]: !prevState[index],
+      }));
+  };
   
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="todo-form">
         <input
-          type="text"
+        type="text"
           value={text}
           onChange={handleInputChange}
           placeholder="What day huh?"
@@ -85,9 +92,14 @@ function TodoForm({ addItem }) {
         <ul>
           {filteredExercises.map((exercise, index) => (
             <div className='fixing 'key={index}>
+               <input
+          type="checkbox"
+          checked={checkedItems[index] || false}
+          onChange={() => handleCheckboxChange(index)}
+        />
              <h3>{exercise.name}</h3> 
              <p>{exercise.description}</p> 
-             <img src={exercise.img} alt={exercise.name} width="80" />
+             <img src={exercise.img} alt={exercise.name} width="70" />
             </div>
           ))}
         </ul>
