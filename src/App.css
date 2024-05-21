@@ -4,13 +4,9 @@ background-color: rgb(219, 219, 40);
 
 }
 
-h1{
-  text-align: center;
-}
-
 input{
   margin-top: 15px;
-margin-left: 42%;
+margin-left: -2%;
 padding: 10px;
 height: 20px;
 box-shadow: 100px;
@@ -25,24 +21,37 @@ width: 7rem;
 
 }
 
+h1{
+  text-align: center;
+}
 
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.fixing{
-  justify-content: center;
-  margin-left: 42%;
-  
-  
-  }
+.fixing {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  .centered-message {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
-  }
-  
-img{
-  margin-left: 200px;
-  margin-top: -200px;
-  border-radius: 10px;
+.fixing .checkbox {
+  margin-right: -40px;
+}
+
+.fixing h3 {
+  margin: 0 10px;
+}
+
+.fixing p {
+  margin: 0 10px;
+}
+
+.centered-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
 }

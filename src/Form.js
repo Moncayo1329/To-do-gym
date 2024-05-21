@@ -66,24 +66,25 @@ function TodoForm({ addItem }) {
 
     // Limpiar tareas del día
     setFilteredExercises([]);
+    setCheckedItems({});
 
     setTimeout(() => {
       setMessage('');
     }, 3000);
   };
-    const handleCheckboxChange = (index) => {
-      setCheckedItems((prevState) => ({
-        ...prevState,
-        [index]: !prevState[index],
-      }));
+
+  const handleCheckboxChange = (index) => {
+    setCheckedItems((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
   };
-  
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="todo-form">
         <input
-        type="text"
+          type="text"
           value={text}
           onChange={handleInputChange}
           placeholder="What day huh?"
@@ -91,15 +92,16 @@ function TodoForm({ addItem }) {
         {/* Mostrar los ejercicios filtrados */}
         <ul>
           {filteredExercises.map((exercise, index) => (
-            <div className='fixing 'key={index}>
-               <input
-          type="checkbox"
-          checked={checkedItems[index] || false}
-          onChange={() => handleCheckboxChange(index)}
-        />
-             <h3>{exercise.name}</h3> 
-             <p>{exercise.description}</p> 
-             <img src={exercise.img} alt={exercise.name} width="70" />
+            <div className='fixing' key={index}>
+              <input 
+              className='checkbox'
+                type="checkbox"
+                checked={checkedItems[index] || false}
+                onChange={() => handleCheckboxChange(index)}
+              />
+              <h3>{exercise.name}</h3>
+              <p>{exercise.description}</p>
+              <img src={exercise.img} alt={exercise.name} width="70" />
             </div>
           ))}
         </ul>
@@ -111,4 +113,5 @@ function TodoForm({ addItem }) {
 }
 
 export default TodoForm;
+
 
