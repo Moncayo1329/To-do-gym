@@ -2,8 +2,8 @@ export const exercises = {
     martes: [
         {
             name: "Dominadas",
-            description: "4 series de 6 repeticiones",
-            img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/330px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg"
+            description: "4 series de 10 repeticiones",
+            img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRL2jBAN7aAgij1Gz2jIvF9wJ-MRvq9Xauw&s"
         },
         {
             name: "Remo con barra",

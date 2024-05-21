@@ -87,7 +87,7 @@ function TodoForm({ addItem }) {
             <div className='fixing 'key={index}>
              <h3>{exercise.name}</h3> 
              <p>{exercise.description}</p> 
-             <img src={exercise.img} alt={exercise.name} width="100" />
+             <img src={exercise.img} alt={exercise.name} width="80" />
             </div>
           ))}
         </ul>
