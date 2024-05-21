@@ -92,7 +92,7 @@ function TodoForm({ addItem }) {
           ))}
         </ul>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className="centered-message">{message}</p>}
       <button onClick={handleCompleteDay}>Done</button>
     </div>
   );
