@@ -1,5 +1,5 @@
 body{
-background-color: rgb(29, 25, 44);
+  background-color: rgb(29, 25, 44);
 
 
 }
@@ -44,7 +44,7 @@ color: blanchedalmond;
   margin-right: -40px;
 }
 
-.fixing h3 {
+.fixing h4 {
   margin: 0 10px;
 }
 
@@ -60,7 +60,7 @@ color: blanchedalmond;
 }
 
 
-h3{
+h4{
   font-family:"Sedan SC", serif;
 color: blanchedalmond;
 }
@@ -69,3 +69,36 @@ p{
  font-family:"Sedan SC", serif;
  color: blanchedalmond;
 }
+
+
+@media (max-width: 768px) {
+  .fixing {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  input {
+    width: 40%;
+    max-width: none;
+    margin: 25px 70px;
+  }
+
+  button {
+    width: 20%;
+    max-width: none;
+    margin: 25px 300px;
+  }
+
+  .fixing .checkbox {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .fixing h4, .fixing p {
+    margin: 10px 0;
+  }
+}
+
+
+
+

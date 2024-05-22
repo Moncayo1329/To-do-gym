@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { exercises } from './Data'; // Asumiendo que tienes los datos de ejercicios en un archivo data.js
+import './App.css';
 
 function TodoForm({ addItem }) {
   const [text, setText] = useState('');
@@ -99,7 +100,7 @@ function TodoForm({ addItem }) {
                 checked={checkedItems[index] || false}
                 onChange={() => handleCheckboxChange(index)}
               />
-              <h3>{exercise.name}</h3>
+              <h4>{exercise.name}</h4>
               <p>{exercise.description}</p>
               <img src={exercise.img} alt={exercise.name} width="70" />
             </div>
